@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const API_URL = import.meta.env.VITE_API_BASE_URL || "https://events.moneypechu.com";
+const API_URL = import.meta.env.VITE_API_BASE_URL || "https://33qrojuqfde2na3a6gvel5k53m0muxal.lambda-url.ap-south-1.on.aws";
 
 export default function ClientsPage() {
   const [clients, setClients] = useState([]);

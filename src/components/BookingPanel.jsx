@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const API_BASE_URL = (
-  import.meta.env.VITE_API_BASE_URL || "https://events.moneypechu.com"
+  import.meta.env.VITE_API_BASE_URL || "https://33qrojuqfde2na3a6gvel5k53m0muxal.lambda-url.ap-south-1.on.aws"
 ).replace(/\/$/, "");
 
 const UUID_PATTERN =
