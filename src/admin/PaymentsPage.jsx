@@ -1,5 +1,6 @@
 import { Download, IndianRupee } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 
 const API_URL = (import.meta.env.VITE_API_BASE_URL || "https://33qrojuqfde2na3a6gvel5k53m0muxal.lambda-url.ap-south-1.on.aws").replace(/\/$/, "");
 
@@ -7,6 +8,7 @@ export default function PaymentsPage() {
   const [payments, setPayments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [headerEl, setHeaderEl] = useState(null);
 
   const fetchPayments = async () => {
     try {
@@ -43,6 +45,7 @@ export default function PaymentsPage() {
 
   useEffect(() => {
     fetchPayments();
+    setHeaderEl(document.getElementById("admin-header-title"));
   }, []);
 
   const successfulPayments = useMemo(() => {
@@ -175,26 +178,30 @@ export default function PaymentsPage() {
 
   return (
     <>
-      <section className='metric-grid payment-metrics'>
-        <article className='metric-card'>
-          <div className='metric-icon green'>
-            <IndianRupee />
-          </div>
+      {headerEl &&
+        createPortal(
+          <section className='metric-grid payment-metrics' style={{ marginBottom: 0 }}>
+            <article className='metric-card'>
+              <div className='metric-icon green'>
+                <IndianRupee />
+              </div>
 
+              <div>
+                <span>Total Amount</span>
+
+                <h3>{formatAmount(grossRevenue)}</h3>
+
+                <small>{successfulPayments.length} successful transactions</small>
+              </div>
+            </article>
+          </section>,
+          headerEl,
+        )}
+
+      <section className='admin-panel' style={{ padding: '12px 22px' }}>
+        <div className='payment-tabs' style={{ marginBottom: '10px' }}>
           <div>
-            <span>Total Amount</span>
-
-            <h3>{formatAmount(grossRevenue)}</h3>
-
-            <small>{successfulPayments.length} successful transactions</small>
-          </div>
-        </article>
-      </section>
-
-      <section className='admin-panel'>
-        <div className='payment-tabs'>
-          <div>
-            <h2>Payment Transactions</h2>
+            <h3 style={{ margin: 0 }}>Payment Transactions</h3>
           </div>
 
           <button

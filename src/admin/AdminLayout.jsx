@@ -74,8 +74,8 @@ export default function AdminLayout() {
           <button className="sidebar-toggle" onClick={() => setOpen(true)}>
             <Menu />
           </button>
-          <div>
-            <h1>{title}</h1>
+          <div id="admin-header-title">
+            {location.pathname !== '/admin/payments' && <h1>{title}</h1>}
           </div>
           <Link className="admin-user" to="/" title="Logout">
             <span>
