@@ -1,7 +1,7 @@
 import { Download, IndianRupee } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
-const API_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_BASE_URL || "https://events.moneypechu.com";
 
 export default function PaymentsPage() {
   const [payments, setPayments] = useState([]);

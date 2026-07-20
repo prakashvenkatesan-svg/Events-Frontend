@@ -18,7 +18,7 @@ import Header from "../components/Header";
 import { events } from "../data/events";
 
 const API_BASE_URL = (
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"
+  import.meta.env.VITE_API_BASE_URL || "https://events.moneypechu.com"
 ).replace(/\/$/, "");
 
 function formatEventDate(value) {
