@@ -10,7 +10,7 @@ export const events = {
     time: "10 AM TO 1 PM",
     venue: "Music Academy, TTK Road",
     address: "Royapettah, Chennai - 600014",
-    price: 1,
+    price: 500,
     banner: "/assets/book-release-banner.png",
     theme: "purple",
     about:
