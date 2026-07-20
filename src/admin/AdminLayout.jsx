@@ -13,7 +13,7 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 
 const nav = [
   ["/admin", LayoutDashboard, "Dashboard", true],
