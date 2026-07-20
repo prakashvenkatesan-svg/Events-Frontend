@@ -23,7 +23,7 @@ export default function AdminLoginPage() {
               <Mail />
               <input
                 type="email"
-                defaultValue="admin@moneypechu.com"
+                placeholder="admin@moneypechu.com"
                 required
               />
             </div>
@@ -32,7 +32,7 @@ export default function AdminLoginPage() {
             Password
             <div>
               <LockKeyhole />
-              <input type="password" defaultValue="password" required />
+              <input type="password" placeholder="Password" required />
             </div>
           </label>
           <button className="primary-button full">Sign In</button>

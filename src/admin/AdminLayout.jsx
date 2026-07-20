@@ -78,7 +78,7 @@ export default function AdminLayout() {
             <small>Organizer Portal</small>
             <h1>{title}</h1>
           </div>
-          <div className="admin-user">
+          <Link className="admin-user" to="/" title="Logout">
             <span>
               <b>MoneyPechu Admin</b>
               <small>Super Admin</small>
@@ -86,7 +86,7 @@ export default function AdminLayout() {
             <i>
               <UserRound />
             </i>
-          </div>
+          </Link>
         </header>
         <main className="admin-main">
           <Outlet />
