@@ -1370,6 +1370,9 @@ a {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-top: -10px;
+  text-decoration: none;
+  color: inherit;
 }
 .admin-user span {
   display: flex;
@@ -1515,6 +1518,24 @@ a {
 .metric-card small i {
   font-style: normal;
   color: #9b9fa4;
+}
+.payment-metrics {
+  display: flex;
+  margin-bottom: 10px;
+}
+.payment-metrics .metric-card {
+  padding: 12px 18px;
+  width: 280px;
+  min-height: 70px;
+  gap: 12px;
+}
+.payment-metrics .metric-card h3 {
+  font-size: 18px;
+  margin: 2px 0;
+}
+.payment-metrics .metric-icon {
+  width: 40px;
+  height: 40px;
 }
 .admin-grid-main {
   display: grid;

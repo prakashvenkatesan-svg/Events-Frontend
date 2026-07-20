@@ -75,7 +75,6 @@ export default function AdminLayout() {
             <Menu />
           </button>
           <div>
-            <small>Organizer Portal</small>
             <h1>{title}</h1>
           </div>
           <Link className="admin-user" to="/" title="Logout">
