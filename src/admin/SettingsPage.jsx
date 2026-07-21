@@ -44,7 +44,7 @@ export default function SettingsPage() {
           </label>
           <label className="admin-field">
             <span>Mobile Number</span>
-            <input defaultValue="+91 98765 43210" />
+            <input defaultValue="+91 9150043968" />
           </label>
           <label className="admin-field full">
             <span>Address</span>

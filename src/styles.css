@@ -359,7 +359,7 @@ a {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr 1fr;
+  grid-template-columns: 2fr 1.2fr 1.8fr;
   gap: 45px;
   padding-bottom: 48px;
 }
