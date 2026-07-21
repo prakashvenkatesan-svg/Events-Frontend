@@ -14,7 +14,7 @@ export default function ClientsPage() {
   
   // Modal form state
   const [formData, setFormData] = useState({
-    fullName: "", mobile: "", email: "", eventId: "", quantity: 1, amount: "", paymentStatus: "SUCCESS", transactionId: "", remarks: ""
+    fullName: "", mobile: "", email: "", eventName: "", quantity: 1, amount: "", paymentStatus: "SUCCESS", transactionId: "", remarks: ""
   });
   const [formError, setFormError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -103,8 +103,8 @@ export default function ClientsPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormError("");
-    if (!formData.fullName || !formData.mobile || !formData.email || !formData.eventId || formData.amount === "") {
-      setFormError("Please fill in all mandatory fields (Name, Mobile, Email, Event, Amount).");
+    if (!formData.fullName || !formData.mobile || !formData.email || formData.amount === "") {
+      setFormError("Please fill in all mandatory fields (Name, Mobile, Email, Amount).");
       return;
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -132,7 +132,7 @@ export default function ClientsPage() {
       }
       alert("Client added successfully!");
       setShowAddModal(false);
-      setFormData({ fullName: "", mobile: "", email: "", eventId: "", quantity: 1, amount: "", paymentStatus: "SUCCESS", transactionId: "", remarks: "" });
+      setFormData({ fullName: "", mobile: "", email: "", eventName: "", quantity: 1, amount: "", paymentStatus: "SUCCESS", transactionId: "", remarks: "" });
       fetchClients();
     } catch (err) {
       setFormError(err.message);
@@ -231,11 +231,8 @@ export default function ClientsPage() {
                   <input type="email" name="email" value={formData.email} onChange={handleInputChange} style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '4px' }} required />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                  <label style={{ fontSize: '14px', fontWeight: 'bold' }}>Event *</label>
-                  <select name="eventId" value={formData.eventId} onChange={handleInputChange} style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '4px' }} required>
-                    <option value="">Select Event</option>
-                    {eventsList.map(ev => <option key={ev.id} value={ev.id}>{ev.title}</option>)}
-                  </select>
+                  <label style={{ fontSize: '14px', fontWeight: 'bold' }}>Event (Optional)</label>
+                  <input name="eventName" value={formData.eventName} onChange={handleInputChange} style={{ padding: '8px', border: '1px solid #ccc', borderRadius: '4px' }} placeholder="e.g. Workshop 2026" />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
                   <label style={{ fontSize: '14px', fontWeight: 'bold' }}>Number of Tickets *</label>
