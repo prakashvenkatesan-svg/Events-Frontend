@@ -14,7 +14,13 @@ export default function AdminLoginPage() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            navigate("/admin");
+            const email = e.target.email.value;
+            const password = e.target.password.value;
+            if (email === "events@coronacreative.in" && password === "Corona@777") {
+              navigate("/admin");
+            } else {
+              alert("Invalid email or password");
+            }
           }}
         >
           <label>
@@ -23,7 +29,8 @@ export default function AdminLoginPage() {
               <Mail />
               <input
                 type="email"
-                placeholder="admin@moneypechu.com"
+                name="email"
+                placeholder="events@coronacreative.in"
                 required
               />
             </div>
@@ -32,7 +39,7 @@ export default function AdminLoginPage() {
             Password
             <div>
               <LockKeyhole />
-              <input type="password" placeholder="Password" required />
+              <input type="password" name="password" placeholder="Password" required />
             </div>
           </label>
           <button className="primary-button full">Sign In</button>
