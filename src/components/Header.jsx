@@ -16,7 +16,7 @@ export default function Header() {
         <nav className={open ? "nav open" : "nav"}>
           <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
           <a href="/#events" onClick={() => setOpen(false)}>Events</a>
-
+          <Link className="admin-button" to="/admin/login" onClick={() => setOpen(false)}>Admin Login</Link>
         </nav>
       </div>
     </header>

@@ -30,7 +30,7 @@ export default function AdminLoginPage() {
               <input
                 type="email"
                 name="email"
-                placeholder="events@coronacreative.in"
+                placeholder="Email Address"
                 required
               />
             </div>

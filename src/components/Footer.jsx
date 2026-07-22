@@ -11,7 +11,7 @@ export default function Footer() {
         </div>
         <div>
           <h3>Quick Links</h3>
-          <Link to="/">Home</Link><a href="/#events">Upcoming Events</a>
+          <Link to="/">Home</Link><a href="/#events">Upcoming Events</a><Link to="/admin/login">Admin Login</Link>
         </div>
         <div>
           <h3>Contact Us</h3>
