@@ -12,6 +12,7 @@ import CheckInPage from "./admin/CheckInPage";
 import PaymentsPage from "./admin/PaymentsPage";
 import ClientsPage from "./admin/ClientsPage";
 import SettingsPage from "./admin/SettingsPage";
+import EventLimitsPage from "./admin/EventLimitsPage";
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
         <Route path='check-in' element={<CheckInPage />} />
         <Route path='payments' element={<PaymentsPage />} />
         <Route path='clients' element={<ClientsPage />} />
+        <Route path='event-limits' element={<EventLimitsPage />} />
         <Route path='settings' element={<SettingsPage />} />
       </Route>
       <Route path='*' element={<Navigate to='/' replace />} />

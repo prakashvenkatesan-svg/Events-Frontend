@@ -22,6 +22,7 @@ const nav = [
   ["/admin/check-in", QrCode, "Check-In"],
   ["/admin/payments", CreditCard, "Payments"],
   ["/admin/clients", Users, "Client List"],
+  ["/admin/event-limits", CalendarDays, "Event Limits"],
   ["/admin/settings", Settings, "Settings"],
 ];
 
