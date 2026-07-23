@@ -194,15 +194,14 @@ export default function ClientsPage() {
                 <th>Email</th>
                 <th>Mobile</th>
                 <th>Date</th>
-                <th>Filing Progress</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {loading ? (
-                <tr><td colSpan='6' className='table-empty'>Loading clients...</td></tr>
+                <tr><td colSpan='5' className='table-empty'>Loading clients...</td></tr>
               ) : filteredClients.length === 0 ? (
-                <tr><td colSpan='6' className='table-empty'>{query ? "No matching clients found." : "No clients found in the database."}</td></tr>
+                <tr><td colSpan='5' className='table-empty'>{query ? "No matching clients found." : "No clients found in the database."}</td></tr>
               ) : (
                 filteredClients.map((client) => (
                   <tr key={client.id}>
@@ -211,29 +210,9 @@ export default function ClientsPage() {
                     <td>{client.phone || "—"}</td>
                     <td>{formatDate(client.createdAt)}</td>
                     <td>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <span>{client.filing_count || 0} / {client.target_count || 200}</span>
-                        {client.is_paused ? (
-                          <span className="table-status failed">Paused</span>
-                        ) : (
-                          <span className="table-status success">Active</span>
-                        )}
-                      </div>
-                    </td>
-                    <td>
-                      <div style={{ display: 'flex', gap: '8px' }}>
-                        <button
-                          type='button'
-                          className={`admin-secondary`}
-                          style={{ padding: '4px 8px', fontSize: '12px', background: client.is_paused ? '#10b981' : '#ef4444', color: 'white', borderColor: 'transparent' }}
-                          onClick={() => togglePause(client.email, !client.is_paused)}
-                        >
-                          {client.is_paused ? 'Resume' : 'Pause'}
-                        </button>
-                        <button type='button' className='icon-button' aria-label={`Actions for ${client.name}`}>
-                          <MoreHorizontal />
-                        </button>
-                      </div>
+                      <button type='button' className='icon-button' aria-label={`Actions for ${client.name}`}>
+                        <MoreHorizontal />
+                      </button>
                     </td>
                   </tr>
                 ))
